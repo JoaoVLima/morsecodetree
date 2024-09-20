@@ -45,7 +45,6 @@ public class ArvoreBinaria {
         return no;
     }
 
-
     void remove_menor() {
         remove_menor_recursao(this.inicio);
     }
@@ -100,7 +99,6 @@ public class ArvoreBinaria {
         return min;
     }
 
-
     int tamanho(){
         return tamanho_recursao(this.inicio);
     }
@@ -143,57 +141,8 @@ public class ArvoreBinaria {
         }
     }
 
-
-    void in_ordem() {
-        System.out.print("[");
-        in_ordem_recursao(this.inicio);
-        System.out.println("]");
-    }
-
-    void in_ordem_recursao(Node no) {
-        if (no != null) {
-            in_ordem_recursao(no.esquerda);
-            System.out.print(no.info+",");
-            in_ordem_recursao(no.direita);
-        }
-    }
-
-    void pre_ordem() {
-        System.out.print("[");
-        pre_ordem_recursao(this.inicio);
-        System.out.println("]");
-    }
-
-    void pre_ordem_recursao(Node no) {
-        if (no != null) {
-            System.out.print(no.info+",");
-            pre_ordem_recursao(no.esquerda);
-            pre_ordem_recursao(no.direita);
-        }
-    }
-
-    void pos_ordem() {
-        System.out.print("[");
-        pos_ordem_recursao(this.inicio);
-        System.out.println("]");
-    }
-
-    void pos_ordem_recursao(Node no) {
-        if (no != null) {
-            pos_ordem_recursao(no.esquerda);
-            pos_ordem_recursao(no.direita);
-            System.out.print(no.info+",");
-        }
-    }
-
     void imprime() {
         this.nivel_ordem();
-        System.out.print("in_ordem: ");
-        this.in_ordem();
-        System.out.print("pre_ordem: ");
-        this.pre_ordem();
-        System.out.print("pos_ordem: ");
-        this.pos_ordem();
     }
 
     public void menu() throws Exception {
