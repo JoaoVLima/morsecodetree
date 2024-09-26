@@ -131,7 +131,7 @@ public class ArvoreBinaria {
         }
     }
 
-    void nivel_ordem() {
+    void print_vertical() {
         for (int i=1; i<=tamanho(); i++) {
             for(int j=i+1; j<=tamanho(); j++) {
                 System.out.print("\t");
@@ -141,8 +141,25 @@ public class ArvoreBinaria {
         }
     }
 
+    void print_horizontal(Node no, int space) {
+        if (no == null)
+            return;
+
+        space += 10;
+
+        print_horizontal(no.direita, space);
+
+        System.out.println();
+        for (int i = 10; i < space; i++)
+            System.out.print(" ");
+        System.out.println(no.info);
+
+        print_horizontal(no.esquerda, space);
+    }
+
+
     void imprime() {
-        this.nivel_ordem();
+        this.print_horizontal(this.inicio, 0);
     }
 
     public void menu() throws Exception {
