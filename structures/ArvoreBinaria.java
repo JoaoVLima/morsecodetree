@@ -73,7 +73,7 @@ public class ArvoreBinaria {
         return tamanho_recursao(this.inicio);
     }
 
-    void imprime() {
+    public void imprime() {
         this.print_horizontal(this.inicio, 0);
     }
 
