@@ -79,7 +79,6 @@ public class ArvoreBinaria {
 
     public void menu() {
         Scanner scanner = new Scanner(System.in);
-        this.imprime();
         while(true){
             System.out.println("1 - Inserir");
             System.out.println("2 - Excluir Valor");
