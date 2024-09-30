@@ -1,11 +1,12 @@
 package structures;
 
+import java.util.Scanner;
+
 public class ArvoreMorse extends ArvoreBinaria{
 
     public ArvoreMorse() {
         super();
     }
-
 
     public void insere(String morse, String info){
         this.inicio = insere_recursao(this.inicio, info, morse);
@@ -55,7 +56,37 @@ public class ArvoreMorse extends ArvoreBinaria{
         }
     }
 
+    public void menu() {
+        Scanner scanner = new Scanner(System.in);
+        this.imprime();
+        while(true){
+            System.out.println("1 - Inserir");
+            System.out.println("2 - Excluir Valor");
+            System.out.println("3 - Buscar Morse");
+            System.out.println("0 - Parar");
 
-
-
+            int opcao = scanner.nextInt();
+            if (opcao == 0) {
+                this.imprime();
+                break;
+            } else if (opcao == 1) {
+                System.out.print("Digite o valor para inserir: ");
+                String info = scanner.next();
+                this.insere(info);
+                this.imprime();
+            } else if (opcao == 2) {
+                System.out.print("Digite o valor do nó para excluir: ");
+                String info = scanner.next();
+                this.remove(info);
+                this.imprime();
+            } else if (opcao == 3) {
+                System.out.print("Digite o codigo morse (Divida as letras com ' ') (Exemplo: '... --- ...'): ");
+                String info = scanner.next();
+                info+=scanner.nextLine();
+                System.out.println(this.buscar(info));
+            } else {
+                System.out.println("Opção inválida");
+            }
+        }
+    }
 }
