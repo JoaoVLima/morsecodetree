@@ -1,11 +1,11 @@
 package structures;
 
 class Node {
-    protected int info;
+    protected String info;
     protected Node esquerda;
     protected Node direita;
 
-    Node(int info){
+    public Node(String info){
         this.info = info;
     }
 }
